@@ -20,33 +20,67 @@
     <!-- ========== HEADER ========== -->
     <header>
         <div class="header-container">
+            <!-- Botón hamburguesa (visible en móvil) -->
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
             <!-- Logo -->
             <div class="logo">
                 <img src="images/agentcraft_logo.png" alt="AgentCraft Logo">
             </div>
 
+            <!-- Formulario de búsqueda -->
+            <form class="search-form" action="#" method="get">
+                <input type="search" name="search" placeholder="Search Figurines" aria-label="Buscar productos">
+                <button type="submit" aria-label="Buscar">🔍</button>
+            </form>
+
             <!-- Navegación -->
             <nav>
-                <!-- Formulario de búsqueda -->
-                <form class="search-form" action="#" method="get">
-                    <input type="search" name="search" placeholder="Start Figurines" aria-label="Buscar productos">
-                    <button type="submit" aria-label="Buscar">🔍</button>
-                </form>
-
-
-
-                <!-- Menú de navegación -->
                 <ul class="nav-menu">
                     <li><a href="index.html">Your Favorites</a></li>
                     <li><a href="tienda.html">Online Shop</a></li>
                     <li><a href="#footer">Contact</a></li>
                 </ul>
             </nav>
+
+            <!-- Botón home (visible solo en móvil) -->
+            <a href="index.html" class="home-btn" aria-label="Ir a inicio">🏠</a>
         </div>
     </header>
 
+    <!-- ========== MENÚ HAMBURGUESA (MÓVIL) ========== -->
+    <div class="hamburger-menu" id="hamburgerMenu">
+        <button class="close-menu-btn" id="closeMenuBtn" aria-label="Cerrar menú">✕</button>
+        
+        <!-- Búsqueda en el menú móvil -->
+        <div class="mobile-search">
+            <h3 class="mobile-menu-title">Search</h3>
+            <form class="search-form-mobile" action="#" method="get">
+                <input type="search" name="search" placeholder="Search Figurines" aria-label="Buscar productos">
+                <button type="submit" aria-label="Buscar">🔍</button>
+            </form>
+        </div>
+
+        <!-- Navegación en el menú móvil -->
+        <div class="mobile-nav">
+            <h3 class="mobile-menu-title">Menu</h3>
+            <nav class="mobile-nav-list">
+                <a href="index.html" class="mobile-nav-item">Your Favorites</a>
+                <a href="tienda.html" class="mobile-nav-item">Online Shop</a>
+                <a href="#footer" class="mobile-nav-item">Contact</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Overlay para cerrar el menú -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
     <!-- ========== HERO SECTION ========== -->
-    <section class="hero" style="background-image: url('images/banner.png');">
+    <section class="hero" style="background-image: url('images/banner.png');" alt="Banner Principal">
         <!-- Contenido del hero -->
         <div class="hero-content">
             <h1>Find your favorite collectibles.</h1>

@@ -15,50 +15,62 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body>
+<body class="tienda-page">
 
     <!-- ========== HEADER ========== -->
     <header>
         <div class="header-container">
-            <!-- Logo -->
-            <div class="logo">
-                <img src="images/agentcraft_logo.png" alt="AgentCraft Logo">
-            </div>
+            <!-- Botón hamburguesa -->
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir menú de categorías">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-            <!-- Navegación -->
-            <nav>
-                <!-- Botón hamburguesa (visible en móvil) -->
-                <!-- Botón de regreso al index -->
+            <!-- Logo y botón de regreso -->
+            <div class="logo-section">
+                <div class="logo">
+                    <img src="images/agentcraft_logo.png" alt="AgentCraft Logo">
+                </div>
                 <a href="index.html" class="back-to-index" aria-label="Volver al inicio">
                     ⬅ Inicio
                 </a>
+            </div>
 
-                <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir menú de categorías">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+            <!-- Formulario de búsqueda -->
+            <form class="search-form" action="#" method="get">
+                <input type="search" name="search" placeholder="Start Figurines" aria-label="Buscar productos">
+                <button type="submit" aria-label="Buscar">🔍</button>
+            </form>
 
-                <!-- Formulario de búsqueda -->
-                <form class="search-form" action="#" method="get">
-                    <input type="search" name="search" placeholder="Start Figurines" aria-label="Buscar productos">
-                    <button type="submit" aria-label="Buscar">🔍</button>
-                </form>
-
-
-
-                <!-- Menú de navegación -->
+            <!-- Navegación (derecha) -->
+            <nav>
                 <ul class="nav-menu">
                     <li><a href="index.html">Your Favorites</a></li>
                     <li><a href="tienda.html#footer">Contact</a></li>
                 </ul>
             </nav>
+
+            <!-- Botón home (visible solo en móvil) -->
+            <a href="index.html" class="home-btn" aria-label="Ir a inicio">🏠</a>
         </div>
     </header>
 
     <!-- ========== MENÚ HAMBURGUESA (MÓVIL) ========== -->
     <div class="hamburger-menu" id="hamburgerMenu">
-        <h3 style="font-family: var(--font-heading); color: var(--purple-primary); margin-bottom: 20px;">Categorías</h3>
+        <button class="close-menu-btn" id="closeMenuBtn" aria-label="Cerrar menú">✕</button>
+        
+        <!-- Búsqueda en el menú móvil -->
+        <div class="mobile-search">
+            <h3 class="mobile-menu-title">Search</h3>
+            <form class="search-form-mobile" action="#" method="get">
+                <input type="search" name="search" placeholder="Start Figurines" aria-label="Buscar productos">
+                <button type="submit" aria-label="Buscar">🔍</button>
+            </form>
+        </div>
+
+        <!-- Categorías -->
+        <h3 class="mobile-menu-title" style="margin-top: 24px;">Categorías</h3>
         <nav class="category-list">
             <div class="category-item active" data-category="all">📦 All Products</div>
             <div class="category-item" data-category="figurines">🎭 Figurines</div>
