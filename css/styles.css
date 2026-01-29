@@ -1,5 +1,5 @@
 /* ========================================
-   AGENTCRAFT COLLECTIBLES STORE - STYLES
+   Mi Tienda
    ======================================== */
 
 /* ===== GOOGLE FONTS ===== */
@@ -289,9 +289,9 @@ nav {
   transform: rotate(90deg);
 }
 
-/* Home button (visible only on mobile) */
+/* Home button (visible solo en móvil) */
 .home-btn {
-  display: none; /* Hidden by default on desktop */
+  display: none; /* Oculto por defecto en desktop */
   font-size: 1.5rem;
   padding: var(--spacing-xs);
   color: var(--white);
@@ -330,7 +330,7 @@ nav {
   background-repeat: no-repeat;
 }
 
-/* Overlay oscuro para mejorar legibilidad del texto */
+/* Overlay oscuro para mejorar la lectura del texto */
 .hero::before {
   content: "";
   position: absolute;
@@ -1031,7 +1031,7 @@ footer {
     flex-wrap: wrap;
   }
 
-  /* Mostrar botón hamburguesa (oculto por defecto en desktop) */
+  /* Mostrar botón hamburguesa */
   .hamburger-btn {
     display: flex;
     order: -1; /* Aparece primero (izquierda) */
