@@ -915,87 +915,132 @@ footer {
   color: var(--purple-primary);
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
+/* ========================================
+   DISEÑO RESPONSIVE - MEDIA QUERIES
+   ======================================== */
 
-/* ========== TABLET (601px - 1024px) ========== */
+/*
+ * ESTRATEGIA DE DISEÑO RESPONSIVE:
+ * 
+ * 1. DESKTOP (> 1024px): Diseño completo con todas las características
+ * 2. TABLET (601px - 1024px): Diseño adaptado con navegación simplificada
+ * 3. MÓVIL (≤ 600px): Diseño móvil
+ * 4. MÓVIL PEQUEÑO (≤ 480px): Diseño para pantallas pequeñas
+ */
+
+/* ========================================
+   BREAKPOINT: TABLET (601px - 1024px)
+   ======================================== */
 @media (min-width: 601px) and (max-width: 1024px) {
-  /* Header: Logo y nombre separados (izquierda y derecha) */
+  
+  /* ----- HEADER Y NAVEGACIÓN ----- */
+  
+  /* 
+   * Header para tablet:
+   * - Logo a la izquierda
+   * - Navegación a la derecha
+   * - Barra de búsqueda ocupa toda la línea inferior
+   */
   .header-container {
     justify-content: space-between;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Para que los elementos se envuelvan en múltiples líneas */
   }
 
   .logo {
-    order: -1; /* Logo a la izquierda */
+    order: -1; /* Para que el logo aparezca primero */
   }
 
-  /* Navegación a la derecha */
-  nav {
-    order: 2;
-    flex: 0 0 auto;
+  .nav {
+    order: 2; /* Para que la navegación se posicione a la derecha */
+    flex: 0 0 auto; /* Se ajusta al contenido */
   }
 
-  /* Barra de búsqueda debajo del menú en tablet */
   .search-form {
-    order: 3;
-    flex: 1 1 100%;
+    order: 3; /* Para que la barra de búsqueda vaya debajo */
+    flex: 1 1 100%; /* Ocupa todo el ancho disponible */
     width: 100%;
-    max-width: 100%;
-    margin-top: var(--spacing-sm);
+    max-width: 100%; 
+    margin-top: var(--spacing-sm); 
   }
 
-  /* Botón home oculto en tablet */
+  /* Ocultar elementos de navegación en tablet */
   .home-btn {
-    display: none;
+    display: none; /* Botón home solo para móvil */
   }
 
-  /* Botón hamburguesa oculto en tablet */
   .hamburger-btn {
-    display: none;
+    display: none; /* Menú hamburguesa solo para móvil */
   }
 
-  /* Ajustes de layout */
+  /* ----- LAYOUTS Y GRIDS ----- */
+  
+  /* 
+   * Convertir layouts de dos columnas a una sola columna
+   * para mejor legibilidad en pantallas medianas
+   */
   .locator-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Mapa y lista de tiendas apilados verticalmente */
   }
 
   .shop-layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Sidebar y productos apilados verticalmente */
   }
 
-  /* Sidebar de categorías arriba del contenido en tablet */
+  /* 
+   * Sidebar de categorías:
+   * - Cambia de posición fija (sticky) a estática
+   * - Se muestra arriba del grid de productos
+   */
   .categories-sidebar {
-    position: static;
+    position: static; /* Ya no es sticky en tablet */
     margin-bottom: var(--spacing-lg);
   }
 
-  /* Productos en 2-3 columnas en tablet */
+  /* ----- GRIDS DE PRODUCTOS ----- */
+  
+  /* Grid de productos mantiene 2 columnas en tablet */
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* Footer mantiene horizontal pero ajustado */
+  /* ----- FOOTER ----- */
+  
+  /* Footer mantiene diseño horizontal pero con menos espacio */
   .footer-container {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-md);
   }
 }
 
-/* ========== MÓVIL (0px - 600px) ========== */
+/* ========================================
+   BREAKPOINT: MÓVIL (0px - 600px)
+   ======================================== */
 @media (max-width: 600px) {
-  /* ===== HEADER MÓVIL ===== */
+  
+  /* ===== HEADER Y NAVEGACIÓN MÓVIL ===== */
+  
+  /*
+   * En móvil, el header se simplifica drásticamente:
+   * - Menú hamburguesa a la izquierda
+   * - Logo en el centro (solo en index.html)
+   * - Botón home a la derecha
+   * - Navegación completa se mueve al menú hamburguesa lateral
+   */
   .header-container {
     justify-content: space-between;
     flex-wrap: wrap;
   }
 
-  /* Mostrar botón hamburguesa */
+  /* Mostrar botón hamburguesa (oculto por defecto en desktop) */
   .hamburger-btn {
     display: flex;
-    order: -1;
+    order: -1; /* Aparece primero (izquierda) */
   }
 
-  /* Ocultar logo en página de productos (tienda.html) */
+  /* 
+   * Ocultar logo en la página de productos (tienda.html)
+   * para ahorrar espacio en el header
+   */
   body.tienda-page .logo {
     display: none;
   }
@@ -1004,17 +1049,17 @@ footer {
     display: none;
   }
 
-  /* En index.html, logo visible pero más pequeño */
+  /* En index.html, el logo se muestra pero más pequeño */
   .logo img {
-    height: 35px;
+    height: 35px; /* Reducido desde 50px */
   }
 
-  /* Ocultar barra de búsqueda del header */
+  /* Ocultar barra de búsqueda del header (se mueve al menú hamburguesa) */
   .search-form {
     display: none;
   }
 
-  /* Ocultar menú de navegación del header */
+  /* Ocultar menú de navegación del header (se mueve al menú hamburguesa) */
   .nav-menu {
     display: none;
   }
@@ -1023,112 +1068,142 @@ footer {
     display: none;
   }
 
-  /* Mostrar botón home */
+  /* Mostrar botón home (oculto por defecto en desktop) */
   .home-btn {
     display: flex;
   }
 
-  /* ===== CONTENIDO PRINCIPAL ===== */
+  /* ===== SECCIÓN HERO ===== */
   
-  /* Hero responsive */
+  /*
+   * Ajustes de tipografía para pantallas pequeñas
+   * para mantener la legibilidad sin ocupar demasiado espacio
+   */
   .hero h1 {
-    font-size: 1.8rem;
+    font-size: 1.8rem; /* Reducido desde 3rem */
   }
 
   .hero p {
-    font-size: 1rem;
+    font-size: 1rem; /* Reducido desde 1.2rem */
   }
 
+  /* Reducir tamaño de personajes decorativos en el hero */
   .hero-character {
-    max-width: 120px;
+    max-width: 120px; /* Reducido desde 300px */
   }
 
-  /* ===== PIE DE PÁGINA ===== */
+  /* ===== FOOTER ===== */
   
-  /* Footer apilado verticalmente */
+  /*
+   * Footer se apila verticalmente en móvil
+   * con contenido centrado para mejor legibilidad
+   */
   .footer-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Una sola columna */
     text-align: center;
     gap: var(--spacing-lg);
   }
 
+  /* Centrar iconos sociales */
   .social-links {
     justify-content: center;
   }
 
+  /* Centrar enlaces del footer */
   .footer-links {
     align-items: center;
   }
 
-  /* ===== PÁGINA DE PRODUCTOS ===== */
+  /* ===== PÁGINA DE PRODUCTOS (TIENDA) ===== */
   
-  /* Layout de productos apilado */
+  /*
+   * En móvil, el layout de la tienda cambia completamente:
+   * - Sidebar de categorías se oculta (accesible desde menú hamburguesa)
+   * - Productos se muestran en una sola columna
+   */
   .shop-layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Layout apilado verticalmente */
   }
 
-  /* Ocultar sidebar de categorías (usar menú hamburguesa) */
+  /* Ocultar sidebar de categorías (disponible en menú hamburguesa) */
   .categories-sidebar {
     display: none;
   }
 
-  /* Productos apilados verticalmente (1 por fila) */
+  /* Productos apilados verticalmente (1 producto por fila) */
   .products-grid {
     grid-template-columns: 1fr;
   }
 
-  /* Productos en scroll horizontal más compactos */
+  /* ===== PRODUCTOS EN SCROLL HORIZONTAL ===== */
+  
+  /*
+   * Ajustes para el carrusel de productos destacados
+   * en pantallas móviles
+   */
   .products-scroll {
-    gap: var(--spacing-sm);
+    gap: var(--spacing-sm); /* Menos espacio entre tarjetas */
   }
 
   .product-card {
-    min-width: 200px;
+    min-width: 200px; /* Tarjetas más compactas (desde 280px) */
   }
 
   /* ===== SECCIONES GENERALES ===== */
   
-  /* Showcase product */
+  /* Reducir padding del showcase de producto */
   .showcase-card {
     padding: var(--spacing-md);
   }
 
-  /* Store locator */
+  /* Localizador de tiendas apilado verticalmente */
   .locator-container {
     grid-template-columns: 1fr;
   }
 
+  /* Reducir altura del mapa en móvil */
   .map-container {
-    height: 300px;
+    height: 300px; /* Reducido desde 400px */
   }
 
-  /* Main content */
+  /* Reducir padding del contenido principal */
   main {
     padding: var(--spacing-md);
   }
 
-  /* Section titles */
+  /* Reducir tamaño de títulos de sección */
   .section-title {
-    font-size: 1.5rem;
+    font-size: 1.5rem; /* Reducido desde 2rem */
   }
 }
 
-/* ========== MÓVIL PEQUEÑO (Hasta 480px) ========== */
+/* ========================================
+   BREAKPOINT: MÓVIL PEQUEÑO (0px - 480px)
+   ======================================== */
 @media (max-width: 480px) {
-  /* Ajustes adicionales para pantallas muy pequeñas */
+  
+  /*
+   * Optimizaciones adicionales para pantallas muy pequeñas
+   * (smartphones antiguos o en orientación vertical)
+   */
+  
+  /* Reducir aún más el título del hero */
   .hero h1 {
-    font-size: 1.5rem;
+    font-size: 1.5rem; /* Reducido desde 1.8rem */
   }
 
+  /* Tarjetas de producto aún más compactas */
   .product-card {
-    min-width: 180px;
+    min-width: 180px; /* Reducido desde 200px */
   }
 
+  /* Menú hamburguesa más estrecho */
   .hamburger-menu {
-    width: 280px;
-    left: -280px;
+    width: 280px; /* Reducido desde 320px */
+    left: -280px; /* Ajustar posición inicial fuera de pantalla */
   }
 
+  /* Reducir padding del contenido principal */
   main {
     padding: var(--spacing-sm);
   }
