@@ -919,15 +919,6 @@ footer {
    DISEÑO RESPONSIVE - MEDIA QUERIES
    ======================================== */
 
-/*
- * ESTRATEGIA DE DISEÑO RESPONSIVE:
- * 
- * 1. DESKTOP (> 1024px): Diseño completo con todas las características
- * 2. TABLET (601px - 1024px): Diseño adaptado con navegación simplificada
- * 3. MÓVIL (≤ 600px): Diseño móvil
- * 4. MÓVIL PEQUEÑO (≤ 480px): Diseño para pantallas pequeñas
- */
-
 /* ========================================
    BREAKPOINT: TABLET (601px - 1024px)
    ======================================== */
@@ -1034,7 +1025,7 @@ footer {
   /* Mostrar botón hamburguesa */
   .hamburger-btn {
     display: flex;
-    order: -1; /* Aparece primero (izquierda) */
+    order: -1;
   }
 
   /* 
@@ -1176,36 +1167,3 @@ footer {
     font-size: 1.5rem; /* Reducido desde 2rem */
   }
 }
-
-/* ========================================
-   BREAKPOINT: MÓVIL PEQUEÑO (0px - 480px)
-   ======================================== */
-@media (max-width: 480px) {
-  
-  /*
-   * Optimizaciones adicionales para pantallas muy pequeñas
-   * (smartphones antiguos o en orientación vertical)
-   */
-  
-  /* Reducir aún más el título del hero */
-  .hero h1 {
-    font-size: 1.5rem; /* Reducido desde 1.8rem */
-  }
-
-  /* Tarjetas de producto aún más compactas */
-  .product-card {
-    min-width: 180px; /* Reducido desde 200px */
-  }
-
-  /* Menú hamburguesa más estrecho */
-  .hamburger-menu {
-    width: 280px; /* Reducido desde 320px */
-    left: -280px; /* Ajustar posición inicial fuera de pantalla */
-  }
-
-  /* Reducir padding del contenido principal */
-  main {
-    padding: var(--spacing-sm);
-  }
-}
-
