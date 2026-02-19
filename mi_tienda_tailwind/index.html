@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="AgentCraft - Tu tienda de coleccionables gaming. Encuentra las mejores figuras, armas y merchandising de tus juegos favoritos.">
+    <meta name="keywords" content="figuras, coleccionables, gaming, merchandising, tienda online">
+    <title>AgentCraft - Encuentra tus coleccionables favoritos</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        purple: {
+                            primary: '#9a48d0',
+                            dark: '#7a3aa8',
+                            light: '#b86de6',
+                        },
+                        lime: {
+                            green: '#bed149',
+                            dark: '#a8ba3d',
+                        },
+                        gray: {
+                            light: '#f5f5f5',
+                            medium: '#cccccc',
+                            dark: '#333333',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gradient-to-b from-purple-primary via-purple-light to-lime-green min-h-screen bg-fixed text-gray-dark font-sans">
+
+    <!-- ========== HEADER ========== -->
+    <header class="bg-purple-primary text-white sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between flex-wrap">
+                
+                <!-- Botón hamburguesa (Mobile) -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-white hover:text-lime-green focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+
+                <!-- Logo & Brand -->
+                <div class="flex items-center gap-3 mx-auto md:mx-0 lg:mx-auto lg:w-1/3 lg:justify-center order-2 md:order-1">
+                    <img src="images/agentcraft_logo.png" alt="AgentCraft Logo" class="hidden md:block h-10 w-auto rounded-lg">
+                    <span class="font-heading font-extrabold text-2xl tracking-tight">AgentCraft</span>
+                </div>
+
+                <!-- Desktop Nav & Search -->
+                <nav class="hidden md:flex w-full md:w-auto lg:w-1/3 items-center justify-end gap-6 order-3 md:order-2 mt-4 md:mt-0">
+                    <!-- Search Form -->
+                    <form class="relative group hidden lg:block search-form bg-white/20 rounded-full px-4 py-1 transition-all focus-within:bg-white/30 focus-within:ring-2 focus-within:ring-white/40">
+                        <input type="search" placeholder="Search Figurines" class="bg-transparent text-sm text-white placeholder-white/70 focus:outline-none w-40 transition-all focus:w-60">
+                        <button type="submit" class="absolute right-2 top-1/2 -translate-y-1/2 text-white/80 hover:text-white">🔍</button>
+                    </form>
+
+                    <!-- Links -->
+                    <ul class="flex items-center gap-4 text-sm font-medium">
+                        <li><a href="index.html" class="hover:bg-white/20 px-3 py-1 rounded-lg transition-all hover:-translate-y-0.5 inline-block">Inicio</a></li>
+                        <li><a href="tienda.html" class="hover:bg-white/20 px-3 py-1 rounded-lg transition-all hover:-translate-y-0.5 inline-block">Tienda Online</a></li>
+                        <li><a href="registro.html" class="hover:bg-white/20 px-3 py-1 rounded-lg transition-all hover:-translate-y-0.5 inline-block">Registro</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Mobile Header Actions -->
+                <div class="md:hidden order-3"></div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 border-t border-purple-light pt-4 pb-2">
+                <form class="mb-4 relative bg-white/20 rounded p-2">
+                    <input type="search" placeholder="Buscar..." class="w-full bg-transparent text-white placeholder-white/70 outline-none">
+                    <button type="submit" class="absolute right-2 top-2">🔍</button>
+                </form>
+                <ul class="flex flex-col gap-2 font-medium text-center">
+                    <li><a href="index.html" class="block py-2 hover:bg-white/10 rounded">Inicio</a></li>
+                    <li><a href="tienda.html" class="block py-2 hover:bg-white/10 rounded">Tienda Online</a></li>
+                    <li><a href="registro.html" class="block py-2 hover:bg-white/10 rounded">Registro</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Script para Mobile Menu -->
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="relative min-h-[400px] flex items-center justify-center bg-gradient-to-br from-purple-primary to-purple-light overflow-hidden" 
+             style="background-image: url('images/banner.png'); background-size: cover; background-position: center bottom;">
+        
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-br from-purple-primary/70 via-purple-primary/50 to-lime-green/30"></div>
+        
+        <!-- Contenido -->
+        <div class="relative z-10 text-center text-white px-4 max-w-[1400px] mx-auto">
+            <h1 class="font-heading text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-md">Find your favorite collectibles.</h1>
+            <p class="text-xl md:text-2xl opacity-95 mb-8">Choose your fighter and prepare for the battle.</p>
+        </div>
+    </section>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main class="max-w-[1400px] mx-auto px-4 md:px-8 py-8 md:py-12 bg-white/85 backdrop-blur-md rounded-2xl shadow-lg my-8">
+
+        <!-- ===== FEATURED PRODUCTS SECTION ===== -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-heading font-bold mb-8 text-purple-primary">Novedades Destacadas</h2>
+
+            <!-- Grid de productos -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- Producto 1: Killjoy -->
+                <article class="bg-white rounded-xl shadow-sm p-4 relative flex flex-col transition-all duration-300 hover:shadow-lg hover:-translate-y-2">
+                    <span class="absolute top-3 right-3 bg-purple-primary text-white text-xs font-bold px-3 py-1 rounded-xl z-10">Out of Stock</span>
+                    <div class="bg-gray-light rounded-lg p-4 mb-4 h-[200px] flex items-center justify-center">
+                        <img src="images/Killjoy.png" alt="Killjoy" class="max-h-full w-auto object-contain">
+                    </div>
+                    <div class="flex flex-col flex-grow">
+                        <h3 class="font-heading text-lg font-bold text-gray-dark mb-2">Killjoy</h3>
+                        <p class="text-xl font-bold text-purple-primary mb-3">19.99 €</p>
+                        <button class="w-full bg-purple-primary/50 text-white font-semibold py-2 rounded-lg cursor-not-allowed mt-auto" disabled>Already Booked</button>
+                    </div>
+                </article>
+
+                <!-- Producto 2: Neon -->
+                <article class="bg-white rounded-xl shadow-sm p-4 relative flex flex-col transition-all duration-300 hover:shadow-lg hover:-translate-y-2">
+                     <span class="absolute top-3 right-3 bg-purple-primary text-white text-xs font-bold px-3 py-1 rounded-xl z-10">Out of Stock</span>
+                    <div class="bg-gray-light rounded-lg p-4 mb-4 h-[200px] flex items-center justify-center">
+                        <img src="images/Neon.png" alt="Neon" class="max-h-full w-auto object-contain">
+                    </div>
+                    <div class="flex flex-col flex-grow">
+                        <h3 class="font-heading text-lg font-bold text-gray-dark mb-2">Neon</h3>
+                        <p class="text-xl font-bold text-purple-primary mb-3">24.99 €</p>
+                        <button class="w-full bg-purple-primary/50 text-white font-semibold py-2 rounded-lg cursor-not-allowed mt-auto" disabled>Already Booked</button>
+                    </div>
+                </article>
+
+                <!-- Producto 3: Reyna -->
+                <article class="bg-white rounded-xl shadow-sm p-4 relative flex flex-col transition-all duration-300 hover:shadow-lg hover:-translate-y-2">
+                     <span class="absolute top-3 right-3 bg-purple-primary text-white text-xs font-bold px-3 py-1 rounded-xl z-10">Out of Stock</span>
+                    <div class="bg-gray-light rounded-lg p-4 mb-4 h-[200px] flex items-center justify-center">
+                        <img src="images/Reyna.png" alt="Reyna" class="max-h-full w-auto object-contain">
+                    </div>
+                    <div class="flex flex-col flex-grow">
+                        <h3 class="font-heading text-lg font-bold text-gray-dark mb-2">Reyna</h3>
+                        <p class="text-xl font-bold text-purple-primary mb-3">15.99 €</p>
+                        <button class="w-full bg-purple-primary/50 text-white font-semibold py-2 rounded-lg cursor-not-allowed mt-auto" disabled>Already Booked</button>
+                    </div>
+                </article>
+
+                <!-- Producto 4: Sage -->
+                <article class="bg-white rounded-xl shadow-sm p-4 relative flex flex-col transition-all duration-300 hover:shadow-lg hover:-translate-y-2">
+                    <span class="absolute top-3 right-3 bg-lime-green text-white text-xs font-bold px-3 py-1 rounded-xl z-10">New</span>
+                    <div class="bg-gray-light rounded-lg p-4 mb-4 h-[200px] flex items-center justify-center">
+                        <img src="images/Sage.png" alt="Sage" class="max-h-full w-auto object-contain">
+                    </div>
+                    <div class="flex flex-col flex-grow">
+                        <h3 class="font-heading text-lg font-bold text-gray-dark mb-2">Sage</h3>
+                        <p class="text-xl font-bold text-purple-primary mb-3">22.99 €</p>
+                        <button class="w-full bg-purple-primary text-white font-semibold py-2 rounded-lg hover:bg-purple-dark hover:scale-105 transition-all mt-auto">Add to Cart</button>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ===== SHOWCASE PRODUCT ===== -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-heading font-bold mb-8 text-purple-primary">Producto Destacado</h2>
+
+            <article class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-gradient-to-br from-[#f5f5f5] to-[#e0e0e0] rounded-2xl p-8 shadow-md">
+                <div class="flex justify-center">
+                     <img src="images/cuchillo.png" alt="Cuchillo Valorant - Epic Weapon" class="max-h-[300px] w-auto object-contain">
+                </div>
+                <div class="text-center md:text-left">
+                    <div class="flex flex-col md:flex-row items-center md:items-start justify-between mb-4">
+                        <div>
+                            <h3 class="font-heading text-2xl md:text-3xl font-bold text-gray-dark">Cuchillo Valorant</h3>
+                            <p class="text-gray-dark/80">Arma coleccionable de edición limitada</p>
+                        </div>
+                        <p class="text-3xl font-bold text-purple-primary mt-2 md:mt-0">12.00 €</p>
+                    </div>
+                     <p class="text-gray-dark/70 mb-6 leading-relaxed">Detalles premium y acabado realista. Forjado en las profundidades del código, este artículo es imprescindible para cualquier agente.</p>
+                    <button class="bg-purple-primary text-white font-bold py-3 px-8 rounded-lg hover:bg-purple-dark hover:scale-105 transition-all w-full md:w-auto shadow-md">Buy Now</button>
+                </div>
+            </article>
+        </section>
+
+        <!-- ===== STORE LOCATOR ===== -->
+        <section>
+            <h2 class="text-3xl font-heading font-bold mb-8 text-purple-primary">Buscador de Tiendas</h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+                <!-- Mapa interactivo -->
+                <div class="bg-gray-light rounded-2xl overflow-hidden h-[400px] shadow-sm">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d404048.2853914869!2d-4.778534!3d37.389092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd7259c44fdb212d%3A0x4d7e3887bd3152a!2sGranada%2C%20Spain!5e0!3m2!1sen!2s!4v1234567890"
+                        class="w-full h-full border-0" allowfullscreen="" loading="lazy"
+                        title="Mapa de tiendas AgentCraft">
+                    </iframe>
+                </div>
+
+                <!-- Lista de tiendas -->
+                <aside class="flex flex-col gap-4">
+                    <!-- Buscador de ubicación -->
+                    <div class="bg-gray-light rounded-lg p-4 flex items-center gap-2 mb-4">
+                        <input type="text" placeholder="Search location..." class="flex-1 bg-transparent border-none p-2 outline-none text-gray-dark">
+                        <button type="button" class="bg-purple-primary text-white p-2 rounded-lg hover:bg-purple-dark transition-colors">🔍</button>
+                    </div>
+
+                    <!-- Tienda 1 -->
+                    <div class="bg-white rounded-lg p-4 shadow-sm flex items-center gap-4 hover:shadow-md hover:translate-x-1 transition-all">
+                        <div class="w-10 h-10 bg-purple-primary rounded-full flex items-center justify-center text-white text-xl">📍</div>
+                        <div>
+                            <h3 class="font-heading font-bold text-gray-dark">Granada, España</h3>
+                            <p class="text-sm text-gray-dark/70">Calle del Gran Capitán, 4</p>
+                        </div>
+                    </div>
+
+                    <!-- Tienda 2 -->
+                    <div class="bg-white rounded-lg p-4 shadow-sm flex items-center gap-4 hover:shadow-md hover:translate-x-1 transition-all">
+                         <div class="w-10 h-10 bg-purple-primary rounded-full flex items-center justify-center text-white text-xl">📍</div>
+                        <div>
+                            <h3 class="font-heading font-bold text-gray-dark">Málaga, España</h3>
+                            <p class="text-sm text-gray-dark/70">Calle Larios, 8A Edificio 6</p>
+                        </div>
+                    </div>
+
+                    <!-- Tienda 3 -->
+                    <div class="bg-white rounded-lg p-4 shadow-sm flex items-center gap-4 hover:shadow-md hover:translate-x-1 transition-all">
+                         <div class="w-10 h-10 bg-purple-primary rounded-full flex items-center justify-center text-white text-xl">📍</div>
+                        <div>
+                            <h3 class="font-heading font-bold text-gray-dark">Córdoba, España</h3>
+                            <p class="text-sm text-gray-dark/70">Calle Gondomar Núñez, 2</p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer id="footer" class="bg-lime-green/30 backdrop-blur-md text-gray-dark py-12 border-t border-lime-green/20">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+
+                <!-- Columna 1: Enlaces de interés -->
+                <div class="flex flex-col items-center md:items-start">
+                    <h3 class="font-heading font-bold text-xl mb-4 text-purple-primary uppercase tracking-wider">Enlaces de Interés</h3>
+                    <nav class="flex flex-col gap-2 text-gray-dark/80">
+                        <a href="#faq" class="hover:text-purple-primary transition-colors hover:translate-x-1 inline-block">FAQ</a>
+                        <a href="#about" class="hover:text-purple-primary transition-colors hover:translate-x-1 inline-block">About Us</a>
+                        <a href="#contact" class="hover:text-purple-primary transition-colors hover:translate-x-1 inline-block">Contact</a>
+                    </nav>
+                </div>
+
+                <!-- Columna 2: Copyright -->
+                <div class="flex flex-col items-center justify-center">
+                    <span class="font-heading font-extrabold text-2xl mb-2 tracking-widest text-gray-dark">AGENTCRAFT</span>
+                    <p class="text-gray-dark/70 text-sm">© 2026 Figurine Store. All rights reserved.</p>
+                </div>
+
+                <!-- Columna 3: Redes sociales -->
+                <div class="flex flex-col items-center md:items-end">
+                    <h3 class="font-heading font-bold text-xl mb-4 text-purple-primary uppercase tracking-wider">Síguenos</h3>
+                    <div class="flex gap-4">
+                        <a href="#instagram" class="w-10 h-10 bg-gray-dark text-white rounded-full flex items-center justify-center hover:bg-purple-primary transform hover:scale-110 transition-all text-xl" aria-label="Instagram">📷</a>
+                        <a href="#twitter" class="w-10 h-10 bg-gray-dark text-white rounded-full flex items-center justify-center hover:bg-purple-primary transform hover:scale-110 transition-all text-xl" aria-label="Twitter">🐦</a>
+                        <a href="#facebook" class="w-10 h-10 bg-gray-dark text-white rounded-full flex items-center justify-center hover:bg-purple-primary transform hover:scale-110 transition-all text-xl" aria-label="Facebook">📘</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
